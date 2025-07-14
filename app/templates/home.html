@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% block title %}Welcome - Expense Tracker{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1>Expense Tracker</h1>
+
+    {% if not current_user.is_authenticated %}
+      <div class="button-group">
+        <a href="{{ url_for('app.login') }}">
+          <button>Login</button>
+        </a>
+        <a href="{{ url_for('app.register') }}">
+          <button>Register</button>
+        </a>
+      </div>
+    {% else %}
+      <div class="button-group">
+        <a href="{{ url_for('app.dashboard') }}">
+          <button>Go to Dashboard</button>
+        </a>
+        <a href="{{ url_for('app.logout') }}">
+          <button>Logout</button>
+        </a>
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}
+
+
+

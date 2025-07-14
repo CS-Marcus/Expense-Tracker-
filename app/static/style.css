@@ -1,0 +1,46 @@
+/* Make the whole viewport a flex container, column direction */
+body.app_index {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* vertical centering */
+  align-items: center;      /* horizontal centering */
+  height: 100vh;            /* full viewport height */
+  margin: 0;
+  background-color: #f0f8ff;
+}
+
+/* Style the title */
+body.app_index h1 {
+  font-size: 3rem;
+  color: #007bff;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Button container styles */
+body.app_index .button-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Button styling */
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Remove underline on links */
+.button-container a {
+  text-decoration: none;
+}

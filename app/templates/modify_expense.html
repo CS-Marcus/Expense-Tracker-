@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+{% block title %} Expense Tracker {% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <h1> Modify Expense </h1>
+
+    <form action="{{ url_for('app.modify_expense', expense_id=expense.id) }}" method="POST" class="form">
+        <input 
+            type="text" 
+            name="name" 
+            value="{{ expense.name }}" 
+            required="required"
+            autocomplete="off"
+        > <br>
+
+        <input 
+            type="text" 
+            name="desc" 
+            value="{{ expense.desc }}" 
+            required="required"
+            autocomplete="off"
+        > <br>
+
+        <!-- Use safe default for total: empty string if None -->
+        <input 
+            type="number" 
+            name="amount" 
+            value="{{ expense.amount }}" 
+            step="0.01" 
+            required="required"
+            min="0"
+        > <br>
+
+        <input 
+            type="date" 
+            name="date" 
+            value="{{ expense.date.strftime('%Y-%m-%d') }}" 
+            required="required"
+        > <br>
+
+        <input type="submit" value="Modify Expense">
+    </form>
+</div>
+{% endblock %}
