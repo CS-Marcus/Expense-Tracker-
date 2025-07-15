@@ -1,4 +1,4 @@
-# Expense Tracker
+# Expensely (Expense Tracker)
 
 
 A simple Flask-based web application to track personal expenses.
